@@ -2,7 +2,7 @@
 
 #.yum install ruby subversion gcc
 
-apt-get install ruby subversion gcc git-core automake 
+apt-get install ruby subversion gcc git-core automake unzip 
 
 
 
