@@ -1,0 +1,18 @@
+#summary How to use it
+
+= Introduction =
+
+get from svn 
+
+$svn checkout http://build-ffmpeg.googlecode.com/svn/trunk/ build-ffmpeg-read-only
+
+and get started 
+
+$sh build-ffmpeg-read-only/build-ffmpeg.sh
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
