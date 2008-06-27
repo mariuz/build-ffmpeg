@@ -1,8 +1,8 @@
-#1 get som prerquizite 
+#1 get some prerequizite for some operating systems 
 
 #.yum install ruby subversion gcc
 
-apt-get install ruby subversion gcc git-core automake unzip 
+apt-get install ruby subversion gcc git-core automake unzip libogg-dev 
 
 
 
