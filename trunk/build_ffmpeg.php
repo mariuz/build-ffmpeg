@@ -1,9 +1,26 @@
 #!/usr/bin/php
 <?php
+
 $OperatingSystem="Ubuntu";
 $Version="8.04";
 
-# requirments apt-get install php5-cli before using this script :)
+function Configure()
+{
+passthru ('./configure --prefix=/usr');
+}
+
+function Make($args)
+{
+passthru ('make'.' '.$args);
+}
+
+function ConfigureMakeInstall()
+{
+Configure();
+Make('install');
+chdir ('..');
+}
+ requirments apt-get install php5-cli before using this script :)
 # see this page also https://wiki.ubuntu.com/ffmpeg
 
 
@@ -17,23 +34,17 @@ passthru ('sudo apt-get -y install liblame-dev libfaad-dev libfaac-dev libxvidco
 
 #From http://www.penguin.cz/~utx/amr download amrnb-7.0.0.2.tar.bz2 and amrwb-7.0.0.3.tar.bz2       
 
-passthru ('wget http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
-passthru ('wget http://ftp.penguin.cz/pub/users/utx/amr/amrwb-7.0.0.3.tar.bz2');
-passthru ('tar -jxvf amrwb-7.0.0.3.tar.bz2');
+#passthru ('wget http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
+#passthru ('wget http://ftp.penguin.cz/pub/users/utx/amr/amrwb-7.0.0.3.tar.bz2');
+#passthru ('tar -jxvf amrwb-7.0.0.3.tar.bz2');
+
 chdir ('amrwb-7.0.0.3');
-
-passthru ('./configure --prefix=/usr');
-passthru ('make');
-passthru ('make install');
-chdir ('..');
+ConfigureMakeInstall();
 
 
-passthru ('tar -jxvf amrnb-7.0.0.2.tar.bz2');
+#passthru ('tar -jxvf amrnb-7.0.0.2.tar.bz2');
 chdir ('amrnb-7.0.0.2');
-passthru ('./configure --prefix=/usr');
-passthru ('make');
-passthru ('make install');
-chdir ('..');
+ConfigureMakeInstall();
 passthru ('pwd');
 
 }
