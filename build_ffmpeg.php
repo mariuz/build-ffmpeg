@@ -20,11 +20,21 @@ passthru ('sudo apt-get -y install liblame-dev libfaad-dev libfaac-dev libxvidco
 passthru ('wget http://ftp.penguin.cz/pub/users/utx/amr/amrnb-7.0.0.2.tar.bz2');
 passthru ('wget http://ftp.penguin.cz/pub/users/utx/amr/amrwb-7.0.0.3.tar.bz2');
 passthru ('tar -jxvf amrwb-7.0.0.3.tar.bz2');
-passthru ('cd amrwb-7.0.0.3');
-passthru ('./configure --prefix=/usr;make;make install;cd ..');
+chdir ('amrwb-7.0.0.3');
+
+passthru ('./configure --prefix=/usr');
+passthru ('make');
+passthru ('make install');
+chdir ('..');
+
+
 passthru ('tar -jxvf amrnb-7.0.0.2.tar.bz2');
-passthru ('cd amrnb-7.0.0.2');
-passthru ('./configure --prefix=/usr;make;make install;cd ..');
+chdir ('amrnb-7.0.0.2');
+passthru ('./configure --prefix=/usr');
+passthru ('make');
+passthru ('make install');
+chdir ('..');
+passthru ('pwd');
 
 }
 
