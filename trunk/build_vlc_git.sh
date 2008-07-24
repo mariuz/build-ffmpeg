@@ -2,9 +2,9 @@
 PREFIX=/opt/vlc
 vlcdir="vlc"  
 
-# /   (if vlc dir exists)
+# /   (if vlc dir exists then just pull it else clone it ) http://tldp.org/LDP/abs/html/fto.html
 
-if [ -D "$vlcdir" ]
+if [ -d "$vlcdir" ]
 then
 	cd vlc
 	git pull
